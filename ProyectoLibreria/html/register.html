@@ -30,11 +30,20 @@
 
     <section class="login-section">
         <form class="login-form">
-            <h2 class="login-title">Ingresa a versa Books</h2>
-            <p class="login-subtitle">Ingrese sus credenciales para acceder a su cuenta</p> <!-- Pequeño texto debajo del título -->
+            <h2 class="login-title">Crear una Cuenta</h2>
+            <p class="login-subtitle">Unete a Versa Books y comienza el viaje de la lectura</p> <!-- Pequeño texto debajo del título -->
             
             <div class="form-group">
-              <label for="email">Correo electrónico o Usuario</label>
+                <label for="name">Nombre Completo</label>
+                <input type="name" id="name" name="name" placeholder="Ingresa tu nombre" required>
+              </div>
+
+              <div class="form-group">
+                <label for="username">Nombre de Usuario</label>
+                <input type="username" id="username" name="username" placeholder="Ingresa tu nombre de Usuario" required>
+              </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
               <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
             </div>
             <div class="form-group">
@@ -42,10 +51,10 @@
               <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
             </div>
             
-            <button type="submit" class="login-button">Accede</button>
+            <button type="submit" class="login-button">Crear Cuenta</button>
             
-            <p class="register-text">
-              No tienes cuenta? <a href="register.html" class="register-link">Regístrate</a>.
+            <p class="register-text aux">
+              Ya tienes cuenta? <a href="login.html" class="register-link">Accede</a>.
             </p> <!-- Texto debajo del botón -->
           </form>
           

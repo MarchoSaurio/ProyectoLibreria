@@ -14,7 +14,7 @@
 
 .login-form {
     background-color: #fff;
-    padding: 10px 2rem;
+    padding: 0px 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -41,15 +41,16 @@
 
 .form-group {
     width: 100%; 
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-align: left;
 }
+
 
 .form-group label {
     font-size: 15px;
     font-weight: 400;
     color: var(--text-color);
-    margin-bottom: 0.5rem; /* Aumenta el espacio entre el label y el input */
+    margin-bottom: 0.5rem;
     display: block; 
 }
 

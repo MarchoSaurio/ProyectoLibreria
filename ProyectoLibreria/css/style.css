@@ -6,6 +6,7 @@
     /* Colors */
     --primary-color: #4A635D;
     --secondary-color: #4E6E79;
+    --hover-color: #D1B25A;
     --background-color: #FAF9F6;
     --header-color: #F3EDE0;
     --text-color: #333333;
@@ -66,8 +67,12 @@ body {
     transition: color 0.3s;
 }
 
+.menu .active{
+    color: var(--hover-color);
+}
+
 .menu a:hover {
-    color: #007bff;
+    color: var(--hover-color);
 }
 
 .user-icon {
@@ -91,3 +96,4 @@ body {
     padding:  0;
     z-index: 10; 
 }
+
