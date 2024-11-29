@@ -10,6 +10,7 @@
     --background-color: #FAF9F6;
     --header-color: #F3EDE0;
     --text-color: #333333;
+    --alter-color: #60CCB2;
 
     /* font */
     --primary-font: 'Merriweather', serif;
@@ -97,3 +98,56 @@ body {
     z-index: 10; 
 }
 
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 10px 0;
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 0;
+    background-color: var(--background-color);
+    margin: 0 15%;
+    text-align: center;
+}
+
+
+/* Dise;o de la barra de busqueda  */
+.search-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    margin-bottom: 1.5rem; 
+}
+
+/* Contenedor de la barra y el ícono */
+.search-bar-wrapper {
+    position: relative;
+    width: 350px; 
+}
+
+/* Input de búsqueda */
+.search-bar {
+    padding: 0.5rem 1rem;
+    padding-left: 2.5rem; 
+    font-size: var(--header-size);
+    border: 2px solid var(--alter-color);
+    border-radius: 10px; 
+    outline: none;
+    width: 100%;
+    font-family: var(--text-font);
+    color: var(--text-color);
+}
+
+/* Ícono de lupa */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.8rem; /* Ajusta según el tamaño del input */
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--alter-color);
+    pointer-events: none; /* No permite interacción con el ícono */
+}
