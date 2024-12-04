@@ -1,7 +1,16 @@
 <?php
 include "../config.php";
 include "../utils.php";
+error_reporting(0);
 $dbConn =  connect($db);
+$filtrar=false;
+$generoa="";
+if(isset($_GET['genero'])){
+    $filtrar=true;
+    $generoa=$_GET['genero'];
+
+}
+
 $sql = $dbConn->prepare("SELECT * FROM libros;");
    $sql->execute();
    $sql->setFetchMode(PDO::FETCH_ASSOC);
@@ -44,12 +53,11 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
         </div>
     </header>
     <?php 
+   
       $arregloG=array();
     while($array2=$sql2->fetch(PDO::FETCH_ASSOC)) {
       
         $generos=explode(",",$array2['generos']);
-        
-
         foreach ($generos as $nombreG) {
             if (in_array($nombreG, $arregloG)){
 
@@ -63,19 +71,26 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
     }
     
     foreach ($arregloG as $genero) {?>
-         <a href="busquedaF.php?genero=<?php print(strtoupper($genero)); ?>" class="book-button"><?php print(strtoupper($genero)); ?></a>
+         <a href="change2.php?genero=<?php print(strtoupper($genero)); ?>" class="book-button"><?php print(strtoupper($genero)); ?></a>
          <?php
         // code...
     }
-    ?>
 
+    ?>
+ <a href="change2.php" class="book-button">TODOS</a>
     <section class="books-section">
         <h2 class="section-title">Intercambio de Libros</h2>
         <div class="books-list">
         <?php 
         while($array=$sql->fetch(PDO::FETCH_ASSOC)) {
-            ?>
+          $comprobar=explode(",", $array['generos']);
+          $mayus=array_map('strtoupper', $comprobar);
+            if($filtrar) {
+            if(in_array($generoa,$mayus)){
+                // code...
             
+            
+            ?>
             <div class="book">
                 <img src="data:image/jpg;base64,<?php echo base64_encode($array['portada'])?>" alt="Libro 1" class="book-image">
                 <h3 class="book-title"><?php print($array['titulo']); ?></h3>
@@ -93,6 +108,27 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
             </div>
 
             <?php
+        }
+        }else{
+            ?>
+<div class="book">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($array['portada'])?>" alt="Libro 1" class="book-image">
+                <h3 class="book-title"><?php print($array['titulo']); ?></h3>
+                <?php 
+                $autors=explode(",", $array['autores']);
+                for($i=0;$i<count($autors);$i++){
+                    ?>
+                    <p class="book-author"><?php print($autors[$i]); ?></p>
+                <?php
+                }
+
+                ?>
+                
+                <a href="#" class="book-button">Detalles</a>
+            </div>
+
+            <?php
+        }
         }
 
         ?>
