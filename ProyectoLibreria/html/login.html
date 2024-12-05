@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\css\style.css">
     <link rel="stylesheet" href="..\css\login.css">
+    <link rel="stylesheet" href="..\css\alerts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Document</title>
 </head>
@@ -50,11 +51,38 @@
           </form>
           
       </section>
-      
+
+      <div id="custom-alert" class="custom-alert">
+        <div class="alert-content">
+            <span id="alert-message"></span>
+            <button id="alert-close" class="alert-close">Cerrar</button>
+        </div>
+    </div>
+
      <!-- Footer -->
      <footer class="footer">
         <p>2024 VersaBooks. All rights reserved.</p>
       </footer>
     
+      <script>
+        // Aquí va el código JS de la alerta
+        function showCustomAlert(message) {
+            var alertElement = document.getElementById("custom-alert");
+            var alertMessage = document.getElementById("alert-message");
+            var alertClose = document.getElementById("alert-close");
+
+            alertMessage.innerText = message;
+            alertElement.style.display = "block";
+
+            alertClose.onclick = function() {
+                alertElement.style.display = "none";
+            };
+
+            setTimeout(function() {
+                alertElement.style.display = "none";
+            }, 5000); // Cerrar automáticamente después de 5 segundos
+        }
+    </script>
+
 </body>
 </html>
