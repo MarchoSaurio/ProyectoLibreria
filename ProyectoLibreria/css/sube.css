@@ -1,0 +1,209 @@
+:root{
+    --login-color: #367A6A;
+}
+
+/* Login Section */
+.login-section {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Cambiar de `calc` a `auto` si usas margen en el formulario */
+    background-color: var(--background-color);
+    padding: 1rem;
+    padding-bottom: 3rem; /* Espacio al final de la sección */
+}
+
+
+.login-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--text-font);
+    margin-bottom: 3rem; /* Añadir margen inferior */
+}
+
+.login-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.login-subtitle {
+    margin: -0.5rem 0 1.5rem; /* Ajusta los márgenes para buena separación */
+    font-size: 15px;
+    color: var(--login-color);
+}
+
+.form-group {
+    width: 100%; 
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    display: block; 
+}
+
+.form-group input {
+    width: 100%; /* Full width within the form-group */
+    padding: 0.8rem;
+    font-size: 1rem;
+    box-shadow: 0 1px 2px #7ecebb; /* Desvanecido */
+    border: 1px solid var(--login-color);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Prevent padding from breaking width */
+}
+
+
+.form-button {
+    margin-top: .5rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--login-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; 
+}
+
+.form-button:hover {
+    transform: scale(1.05);
+}
+
+.form-button:active {
+    transform: scale(0.95);
+}
+
+
+/* Texto debajo del botón */
+.register-text {
+    text-align: left;
+    margin-top: 1.5rem;
+    font-size: 15px;
+    width: 100%;
+    color: var(--login-color);
+}
+
+
+
+.register-link {
+    color: var(--login-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.register-link:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Pruebas  */
+textarea {
+    width: 100%; /* Asegura que ocupe el ancho completo del contenedor */
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-family: var(--text-font); /* Consistencia con los inputs */
+    box-shadow: 0 1px 2px #7ecebb; /* Sombra desvanecida */
+    border: 1px solid var(--login-color); /* Borde similar a los inputs */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Ajusta padding al ancho total */
+    resize: vertical; /* Permitir redimensionar solo verticalmente */
+    min-height: 100px; /* Establecer una altura mínima */
+}
+
+
+.file-upload input[type="file"] {
+    display: block;
+    width: 100%; /* Asegura que ocupe el ancho completo del contenedor */
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-family: var(--text-font); /* Mantiene la coherencia tipográfica */
+    color: var(--text-color); /* Texto del archivo seleccionado */
+    border: 1px solid var(--login-color); /* Borde consistente */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #fff; /* Fondo blanco */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Indica que es interactivo */
+    box-sizing: border-box;
+}
+
+.file-upload input[type="file"]::file-selector-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: var(--text-font);
+    font-weight: var(--header-weight);
+    color: #fff;
+    background-color: var(--login-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-upload input[type="file"]::file-selector-button:hover {
+    background-color: var(--hover-color);
+}
+
+.file-upload input[type="file"]:focus {
+    border-color: var(--hover-color);
+    box-shadow: 0 0 5px var(--hover-color);
+}
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el checkbox con el texto */
+    gap: 0.5rem; /* Espacio entre el checkbox y el texto */
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: 1rem; /* Tamaño de fuente coherente */
+    font-family: var(--text-font); /* Tipografía uniforme */
+    font-weight: var(--text-weight); /* Peso de la fuente */
+    color: var(--text-color); /* Color del texto */
+    cursor: pointer; /* Indica que el texto es clickeable */
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 1.2rem; /* Tamaño del checkbox */
+    height: 1.2rem; /* Tamaño del checkbox */
+    accent-color: var(--login-color); /* Color del checkbox cuando está seleccionado */
+    border: 1px solid var(--login-color); /* Borde del checkbox */
+    border-radius: 3px; /* Esquinas ligeramente redondeadas */
+    cursor: pointer; /* Indica que es interactivo */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.checkbox-group input[type="checkbox"]:focus {
+    outline: none; /* Elimina el borde predeterminado */
+    box-shadow: 0 0 5px var(--hover-color); /* Resalta el checkbox al enfocarse */
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--hover-color); /* Fondo al estar seleccionado */
+}
