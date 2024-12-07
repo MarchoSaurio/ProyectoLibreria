@@ -27,8 +27,8 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VersaBooks</title>
-    <link rel="stylesheet" href="..\css/style.css">
-    <link rel="stylesheet" href="..\css/change.css">
+    <link rel="stylesheet" href="..\css\style.css">
+    <link rel="stylesheet" href="..\css\change.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -52,6 +52,11 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
             </a>
         </div>
     </header>
+
+    <section class="section section-books">
+        <h2 class="section-title">Intercambio de Libros</h2>
+
+        <div class="tags">
     <?php 
    
       $arregloG=array();
@@ -78,8 +83,7 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
 
     ?>
  <a href="change2.php" class="book-button">TODOS</a>
-    <section class="books-section">
-        <h2 class="section-title">Intercambio de Libros</h2>
+ </div>
         <div class="books-list">
         <?php 
         while($array=$sql->fetch(PDO::FETCH_ASSOC)) {
@@ -124,7 +128,7 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
 
                 ?>
                 
-                <a href="#" class="book-button">Detalles</a>
+                <a href="#" class="detalle-button">Detalles</a>
             </div>
 
             <?php

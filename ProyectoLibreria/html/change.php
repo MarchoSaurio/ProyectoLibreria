@@ -2,13 +2,11 @@
 include "../config.php";
 include "../utils.php";
 $dbConn =  connect($db);
+
 $sql = $dbConn->prepare("SELECT * FROM libros;");
    $sql->execute();
    $sql->setFetchMode(PDO::FETCH_ASSOC);
   
-  $sql2 = $dbConn->prepare("SELECT * FROM libros;");
-   $sql2->execute();
-   $sql2->setFetchMode(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -43,31 +41,6 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
             </a>
         </div>
     </header>
-    <?php 
-      $arregloG=array();
-    while($array2=$sql2->fetch(PDO::FETCH_ASSOC)) {
-      
-        $generos=explode(",",$array2['generos']);
-        
-
-        foreach ($generos as $nombreG) {
-            if (in_array($nombreG, $arregloG)){
-
-                // code...
-            }else{
-                array_push($arregloG, $nombreG);
-            }
-            // code...
-        }
-
-    }
-    
-    foreach ($arregloG as $genero) {?>
-         <a href="busquedaF.php?genero=<?php print(strtoupper($genero)); ?>" class="book-button"><?php print(strtoupper($genero)); ?></a>
-         <?php
-        // code...
-    }
-    ?>
 
     <section class="books-section">
         <h2 class="section-title">Intercambio de Libros</h2>
@@ -79,13 +52,13 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
             <div class="book">
                 <img src="data:image/jpg;base64,<?php echo base64_encode($array['portada'])?>" alt="Libro 1" class="book-image">
                 <h3 class="book-title"><?php print($array['titulo']); ?></h3>
-                <?php 
+                <?php
                 $autors=explode(",", $array['autores']);
                 for($i=0;$i<count($autors);$i++){
                     ?>
                     <p class="book-author"><?php print($autors[$i]); ?></p>
                 <?php
-                }
+                } 
 
                 ?>
                 
@@ -97,10 +70,36 @@ $sql = $dbConn->prepare("SELECT * FROM libros;");
 
         ?>
         
-            
-            
-           
-            
+            <div class="book">
+                <img src="..\img/book1.jpg" alt="Libro 1" class="book-image">
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">F. Scott Fitzgerald</p>
+            </div>
+            <div class="book">
+                <img src="..\img/book1.jpg" alt="Libro 1" class="book-image">
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">F. Scott Fitzgerald</p>
+            </div>
+            <div class="book">
+                <img src="..\img/book1.jpg" alt="Libro 1" class="book-image">
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">F. Scott Fitzgerald</p>
+            </div>
+            <div class="book">
+                <img src="..\img/book1.jpg" alt="Libro 1" class="book-image">
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">F. Scott Fitzgerald</p>
+            </div>
+            <div class="book">
+                <img src="..\img/book1.jpg" alt="Libro 1" class="book-image">
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">F. Scott Fitzgerald</p>
+            </div>
+            <div class="book">
+                <img src="..\img/book1.jpg" alt="Libro 1" class="book-image">
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">F. Scott Fitzgerald</p>
+            </div>
         </div>
     </section>
     
